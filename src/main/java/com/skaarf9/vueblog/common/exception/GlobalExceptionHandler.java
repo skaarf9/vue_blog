@@ -44,4 +44,11 @@ public class GlobalExceptionHandler {
         ObjectError objectError = e.getBindingResult().getAllErrors().get(0);
         return Result.fail(objectError.getDefaultMessage());
     }
+
+    @ResponseStatus(HttpStatus.UNAUTHORIZED)
+    @ExceptionHandler(value = IllegalAccessException.class)
+    public Result handler(IllegalAccessException e){
+        log.error("断言异常: ---------------", e);
+        return Result.fail(e.getMessage());
+    }
 }

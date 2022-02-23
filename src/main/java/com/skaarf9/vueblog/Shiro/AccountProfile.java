@@ -4,12 +4,15 @@ package com.skaarf9.vueblog.Shiro;/**
  * @description:
  */
 
+import lombok.Data;
+
 import java.io.Serializable;
 
 /**
  * @author Administrator
  * @date 2022/2/23
  */
+@Data
 public class AccountProfile implements Serializable {
     private Long id;
 
