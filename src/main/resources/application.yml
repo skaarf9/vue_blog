@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    name: vueblog
+    url: jdbc:mysql://localhost:3306/vueblog?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai #url
+    username: root
+    password: 333
+    driver-class-name: com.mysql.cj.jdbc.Driver
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**Mapper.xml
+server:
+  port: 8080
+shiro-redis:
+  enable: true
+  redis-manager:
+    host: 127.0.0.1:6379
+skaarf9:
+  jwt:
+    secret: oiuyqojoic972hnfaso7y91qhjoisf
+    #有效时间为7天 单位秒
+    expire: 604800
+    header: Authorization
