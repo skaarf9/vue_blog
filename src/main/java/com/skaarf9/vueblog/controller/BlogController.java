@@ -33,8 +33,8 @@ public class BlogController {
 
     @GetMapping("/blogs")
     public Result list(@RequestParam(defaultValue = "1") Integer currentPage) {
-        Page page = new Page(currentPage, 5);
-        IPage pageData = blogService.page(page, new QueryWrapper<Blog>().orderByDesc("created"));
+        Page<Blog> page = new Page<>(currentPage, 5);
+        IPage<Blog> pageData = blogService.page(page, new QueryWrapper<Blog>().orderByDesc("created"));
 
         return Result.succ(pageData);
     }
